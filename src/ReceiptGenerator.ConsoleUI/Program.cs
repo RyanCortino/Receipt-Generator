@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReceiptGenerator.ConsoleUi.Services;
+using ReceiptGenerator.Domain.Common.Interfaces;
 using Serilog;
 
 // Setting up the configuartion for serilog 
@@ -11,21 +13,20 @@ BuildConfig(builder);
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Build())
     .Enrich.FromLogContext()
-    .WriteTo.Console()
+    .WriteTo.Console(outputTemplate: "{Message:lj}{NewLine}{Exception}")
     .CreateLogger();
-
-Log.Logger.Information("Application Starting..");
 
 // Setting up dependency injection
 IHost host = Host.CreateDefaultBuilder()
     .ConfigureServices((context, services) =>
     {
-        services.AddTransient<IEntryService, EntryService>();
+        services.AddTransient<IEntryService, Demonstration>();
+        services.AddTransient<ICartService, CartService>();
     })
     .UseSerilog()
     .Build();
 
-var svc = ActivatorUtilities.CreateInstance<EntryService>(host.Services, args);
+var svc = ActivatorUtilities.CreateInstance<Demonstration>(host.Services, args);
 svc.Run(args);
 
 static void BuildConfig(IConfigurationBuilder builder)
