@@ -110,7 +110,7 @@ public class CartService : ICartService
             Item = item;
             Quantity = quantity;
 
-            LineTotal = Item.Price * Quantity;
+            LineTotal = Math.Round(Item.Price * Quantity, 2, MidpointRounding.ToEven);
         }
 
         public override string ToString()
@@ -120,7 +120,7 @@ public class CartService : ICartService
 
         public void ApplyDiscountToLine(Discount discount)
         {
-            LineTotal -= discount.CalculateDiscount(LineTotal);
+            LineTotal = Math.Round(LineTotal - discount.CalculateDiscount(LineTotal), 2, MidpointRounding.ToEven);
         }
     }
 }
