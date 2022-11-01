@@ -29,7 +29,10 @@ public class LineItem : IHasDomainEvent
         {
             if (value == _discount || _discount is null)
             {
-                DomainEvents.Add(new LineItemDiscountedEvent(this));
+                throw new NotImplementedException();
+                
+                // TODO: Add the following event.
+                // DomainEvents.Add(new LineItemDiscountedEvent(this));
             }
 
             _discount = value;
