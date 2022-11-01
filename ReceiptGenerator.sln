@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceiptGenerator.ConsoleUi"
 		{275AC573-029D-463F-867B-70C1A0F46864} = {275AC573-029D-463F-867B-70C1A0F46864}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{3E5D8A27-DA39-44BA-B2CE-AF9B4973378A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E5D8A27-DA39-44BA-B2CE-AF9B4973378A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E5D8A27-DA39-44BA-B2CE-AF9B4973378A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +39,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{275AC573-029D-463F-867B-70C1A0F46864} = {9C77D57A-2B7F-4607-9775-63D6286050BB}
 		{3E5D8A27-DA39-44BA-B2CE-AF9B4973378A} = {9C77D57A-2B7F-4607-9775-63D6286050BB}
+		{A7727ADB-80FE-467D-BC16-9B18E9DBE19D} = {9C77D57A-2B7F-4607-9775-63D6286050BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83026D27-9B3F-465E-A5EB-02E6F55D878C}
