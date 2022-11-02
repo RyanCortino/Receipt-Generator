@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceiptGenerator.ConsoleUi"
 		{275AC573-029D-463F-867B-70C1A0F46864} = {275AC573-029D-463F-867B-70C1A0F46864}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceiptGenerator.Application", "src\Application\ReceiptGenerator.Application.csproj", "{A7727ADB-80FE-467D-BC16-9B18E9DBE19D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
