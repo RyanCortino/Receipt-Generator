@@ -1,4 +1,5 @@
 ﻿using ReceiptGenerator.Domain.Common;
+using ReceiptGenerator.Domain.ValueObjects;
 
 namespace ReceiptGenerator.Domain.Entities;
 
@@ -6,36 +7,21 @@ public class LineItem : IHasDomainEvent
 {
     public Product? Product { get; set; }
 
+    public Discount? Discount { get; set; }
+
     public int Quantity { get; set; }
 
-    public decimal? LinePrice
+    public Money LinePrice
     {
         get
         {
-            if (Product == null) 
-            {
-                return Product?.Price * Quantity;
-            }
+            if (Product is null)
+                return Money.From(0);
 
-            return Product?.Price * Quantity;
-        }
-    }
+            if (Discount is not null)
+                return Money.From(Discount * (Product.Price * Quantity));
 
-    private decimal? _discount;
-    public decimal Discount
-    {
-        get => _discount ?? 0;
-        set
-        {
-            if (value == _discount || _discount is null)
-            {
-                throw new NotImplementedException();
-                
-                // TODO: Add the following event.
-                // DomainEvents.Add(new LineItemDiscountedEvent(this));
-            }
-
-            _discount = value;
+            return Money.From(Product.Price * Quantity);
         }
     }
 

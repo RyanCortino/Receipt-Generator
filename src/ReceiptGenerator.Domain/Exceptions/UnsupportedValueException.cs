@@ -10,14 +10,6 @@ public class UnsupportedCouponCodeException : Exception
     }
 }
 
-public class UnsupportedItemException : Exception
-{
-    public UnsupportedItemException(Item item)
-        : base($"Item \"{item}\" is unsupported.")
-    {
-    }
-}
-
 public class UnsupportedTaxClassification : Exception
 {
     public UnsupportedTaxClassification(TaxClassification taxClassification)

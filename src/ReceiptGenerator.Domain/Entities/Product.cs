@@ -5,9 +5,9 @@ namespace ReceiptGenerator.Domain.Entities;
 
 public class Product
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
-    public TaxClassification TaxType { get; set; }
+    public TaxClassification TaxType { get; set; } = TaxClassification.General;
 
     public decimal Price { get; set; }
 
