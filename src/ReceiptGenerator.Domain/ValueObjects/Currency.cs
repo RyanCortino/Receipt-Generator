@@ -1,0 +1,45 @@
+﻿using ReceiptGenerator.Domain.Common;
+
+namespace ReceiptGenerator.Domain.ValueObjects;
+
+public class Currency : ValueObject
+{
+    #region Constructors
+    static Currency()
+    {
+    }
+
+    private Currency()
+    {
+    }
+
+    private Currency(string displayName, int numericCode, int defaultFractionDigits, int subUnit)
+    {
+        DisplayName = displayName;
+        NumericCode = numericCode;
+        DefaultFractionDigits = defaultFractionDigits;
+        SubUnit = subUnit;
+    }
+    #endregion
+
+    #region Static Members
+    public static Currency USD => new("US Dollar", 840, 2, 100);
+    #endregion
+
+    #region Fields & Properties
+    public string DisplayName { get; private set; } = string.Empty;
+    public int NumericCode { get; private set; } = 0;
+    public int DefaultFractionDigits { get; private set; } = 0;
+    public int SubUnit { get; private set; } = 0;
+    #endregion
+
+    #region Private & Protected Methods
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return DisplayName;
+        yield return NumericCode;
+        yield return DefaultFractionDigits;
+        yield return SubUnit;
+    } 
+    #endregion
+}
