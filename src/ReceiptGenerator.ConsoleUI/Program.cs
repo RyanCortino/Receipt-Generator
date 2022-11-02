@@ -21,7 +21,6 @@ IHost host = Host.CreateDefaultBuilder()
     .ConfigureServices((context, services) =>
     {
         services.AddTransient<IEntryService, Demonstration>();
-        services.AddTransient<ICartService, CartService>();
     })
     .UseSerilog()
     .Build();
