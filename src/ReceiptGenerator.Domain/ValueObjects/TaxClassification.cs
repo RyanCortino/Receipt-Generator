@@ -23,7 +23,7 @@ public class TaxClassification : ValueObject
     }
     #endregion
 
-    #region Static Members
+    #region Static Factory Methods
     public static TaxClassification From(string category)
     {
         // instantiate the requested category.
@@ -51,20 +51,11 @@ public class TaxClassification : ValueObject
     #endregion
 
     #region Public Methods
-    public static implicit operator string(TaxClassification taxClassification)
-    {
-        return taxClassification.ToString();
-    }
+    public static implicit operator string(TaxClassification taxClassification) => taxClassification.ToString();
 
-    public static explicit operator TaxClassification(string category)
-    {
-        return From(category);
-    }
+    public static explicit operator TaxClassification(string category) => From(category);
 
-    public override string ToString()
-    {
-        return Category;
-    }
+    public override string ToString() => Category;
     #endregion
 
     #region Private & Protected Methods

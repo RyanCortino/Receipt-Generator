@@ -24,10 +24,12 @@ public class Money : ValueObject
     }
     #endregion
 
-    #region Static Members
+    #region Static Factory Methods
     public static Money From(decimal value)
     {
         var money = new Money(value, Currency.USD);
+
+        // validate?
 
         return money;
     }
@@ -39,20 +41,11 @@ public class Money : ValueObject
     #endregion
 
     #region Public Methods
-    public static implicit operator decimal(Money money)
-    {
-        return money.Value;
-    }
+    public static implicit operator decimal(Money money) => money.Value;
 
-    public static explicit operator Money(decimal value)
-    {
-        return From(value);
-    }
+    public static explicit operator Money(decimal value) => From(value);
 
-    public override string ToString()
-    {
-        return Value.ToString("C", Currency.Culture);
-    }
+    public override string ToString() => Value.ToString("C", Currency.Culture);
     #endregion
 
     #region Private & Protected Methods

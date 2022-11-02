@@ -1,45 +1,53 @@
-﻿using ReceiptGenerator.Domain.Exceptions;
-using System;
+﻿using ReceiptGenerator.Domain.Common;
 
 namespace ReceiptGenerator.Domain.ValueObjects;
 
-public sealed class Discount
+public sealed class Discount : ValueObject
 {
-    #region Static Members
-    static Discount() { }
-    public static Discount FirstTime15 => new("FIRSTTIME15", 15M);
-    #endregion
-
     #region Constructors
-    private Discount() { }
-    
-    private Discount(string code, decimal value)
+    static Discount() 
     {
-        Code = code;
+    }
+
+    private Discount() 
+    {
+    }
+
+    private Discount(decimal value)
+    {
         Value = value;
     }
     #endregion
 
-    #region Properties
-    public string Code { get; private set; } = string.Empty;
-
-    public decimal Value { get; private set; } = 0;
-    #endregion
-
-    #region Interface
-    public decimal CalculateDiscount(decimal input)
+    #region Static Factory Methods
+    public static Discount From(decimal value)
     {
-        return Math.Round(input * (Value / 100), 2, MidpointRounding.ToEven);        
+        var discount = new Discount(value);
+
+        // validate?
+
+        return discount;
+
     }
+    public static Discount FirstTime15 => new(0.15m);
     #endregion
 
-    #region Methods
-    private static IEnumerable<Discount> SupportedCoupons
+    #region Properties
+    public decimal Value { get; private set; } = 0m;
+    #endregion
+
+    #region Public Methods
+    public static implicit operator decimal(Discount discount) => discount.Value;
+
+    public static explicit operator Discount(decimal value) => From(value);
+
+    public override string ToString() => Value.ToString("P");
+    #endregion
+
+    #region Private & Protected Methods
+    protected override IEnumerable<object> GetEqualityComponents()
     {
-        get
-        {
-            yield return FirstTime15;
-        }
-    } 
+        yield return Value;
+    }
     #endregion
 }

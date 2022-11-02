@@ -23,7 +23,7 @@ public class Currency : ValueObject
     }
     #endregion
 
-    #region Static Members
+    #region Static Factory Methods
     public static Currency USD => new("US Dollar", new CultureInfo("en-US"), 840, 2, 100);
     #endregion
 
@@ -41,6 +41,6 @@ public class Currency : ValueObject
         yield return NumericCode;
         yield return DefaultFractionDigits;
         yield return SubUnit;
-    } 
+    }
     #endregion
 }
