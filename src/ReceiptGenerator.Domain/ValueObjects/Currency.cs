@@ -1,4 +1,5 @@
 ﻿using ReceiptGenerator.Domain.Common;
+using System.Globalization;
 
 namespace ReceiptGenerator.Domain.ValueObjects;
 
@@ -13,7 +14,7 @@ public class Currency : ValueObject
     {
     }
 
-    private Currency(string displayName, int numericCode, int defaultFractionDigits, int subUnit)
+    private Currency(string displayName, CultureInfo displaySymbol, int numericCode, int defaultFractionDigits, int subUnit)
     {
         DisplayName = displayName;
         NumericCode = numericCode;
@@ -23,11 +24,12 @@ public class Currency : ValueObject
     #endregion
 
     #region Static Members
-    public static Currency USD => new("US Dollar", 840, 2, 100);
+    public static Currency USD => new("US Dollar", new CultureInfo("en-US"), 840, 2, 100);
     #endregion
 
     #region Fields & Properties
     public string DisplayName { get; private set; } = string.Empty;
+    public CultureInfo Culture { get; private set; } = CultureInfo.InvariantCulture;
     public int NumericCode { get; private set; } = 0;
     public int DefaultFractionDigits { get; private set; } = 0;
     public int SubUnit { get; private set; } = 0;
@@ -36,7 +38,6 @@ public class Currency : ValueObject
     #region Private & Protected Methods
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return DisplayName;
         yield return NumericCode;
         yield return DefaultFractionDigits;
         yield return SubUnit;

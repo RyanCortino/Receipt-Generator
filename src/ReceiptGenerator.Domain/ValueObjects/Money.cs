@@ -1,4 +1,5 @@
 ﻿using ReceiptGenerator.Domain.Common;
+using System.Globalization;
 
 namespace ReceiptGenerator.Domain.ValueObjects;
 
@@ -37,10 +38,27 @@ public class Money : ValueObject
     public Currency Currency { get; private set; } = Currency.USD;
     #endregion
 
+    #region Public Methods
+    public static implicit operator decimal(Money money)
+    {
+        return money.Value;
+    }
+
+    public static explicit operator Money(decimal value)
+    {
+        return From(value);
+    }
+
+    public override string ToString()
+    {
+        return Value.ToString("C", Currency.Culture);
+    }
+    #endregion
+
     #region Private & Protected Methods
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
-    } 
+    }
     #endregion
 }
