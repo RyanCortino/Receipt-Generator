@@ -1,9 +1,6 @@
-﻿using ReceiptGenerator.Domain.Common;
-using ReceiptGenerator.Domain.ValueObjects;
+﻿namespace ReceiptGenerator.Domain.Entities;
 
-namespace ReceiptGenerator.Domain.Entities;
-
-public class LineItem : IHasDomainEvent
+public class LineItem : BaseEntity
 {
     public Product? Product { get; set; }
 
@@ -24,6 +21,4 @@ public class LineItem : IHasDomainEvent
             return Money.From(Product.Price * Quantity);
         }
     }
-
-    public IList<DomainEvent> DomainEvents { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 }

@@ -1,7 +1,4 @@
-﻿using ReceiptGenerator.Domain.Common;
-using System.Globalization;
-
-namespace ReceiptGenerator.Domain.ValueObjects;
+﻿namespace ReceiptGenerator.Domain.ValueObjects;
 
 /// <summary>
 /// This value object refers to a quantity that represents a means of payment in an accepted currency.

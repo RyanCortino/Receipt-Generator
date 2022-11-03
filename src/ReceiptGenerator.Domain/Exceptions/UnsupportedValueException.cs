@@ -1,6 +1,4 @@
-﻿using ReceiptGenerator.Domain.ValueObjects;
-
-namespace ReceiptGenerator.Domain.Exceptions;
+﻿namespace ReceiptGenerator.Domain.Exceptions;
 
 public class UnsupportedCouponCodeException : Exception
 {

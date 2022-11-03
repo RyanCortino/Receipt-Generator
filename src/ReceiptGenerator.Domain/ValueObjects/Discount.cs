@@ -1,6 +1,4 @@
-﻿using ReceiptGenerator.Domain.Common;
-
-namespace ReceiptGenerator.Domain.ValueObjects;
+﻿namespace ReceiptGenerator.Domain.ValueObjects;
 
 public sealed class Discount : ValueObject
 {

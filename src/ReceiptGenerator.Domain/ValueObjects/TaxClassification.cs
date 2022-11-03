@@ -1,7 +1,4 @@
-﻿using ReceiptGenerator.Domain.Common;
-using ReceiptGenerator.Domain.Exceptions;
-
-namespace ReceiptGenerator.Domain.ValueObjects;
+﻿namespace ReceiptGenerator.Domain.ValueObjects;
 
 /// <summary>
 /// Represents a tax category for the purposes of determine sales tax exemptions.

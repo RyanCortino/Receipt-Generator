@@ -1,5 +1,4 @@
-﻿using ReceiptGenerator.Domain.Common;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace ReceiptGenerator.Domain.ValueObjects;
 

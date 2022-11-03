@@ -1,8 +1,5 @@
-﻿using ReceiptGenerator.Domain.Common;
+﻿namespace ReceiptGenerator.Domain.Entities;
 
-namespace ReceiptGenerator.Domain.Entities;
-
-public class Cart : IHasDomainEvent
+public class Cart : BaseEntity
 {
-    public IList<DomainEvent> DomainEvents { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 }
