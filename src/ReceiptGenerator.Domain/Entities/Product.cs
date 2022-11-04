@@ -2,6 +2,8 @@
 
 public class Product : BaseEntity
 {
+    public int CartId { get; set; }
+
     public string Name { get; set; } = string.Empty;
 
     public TaxClassification TaxType { get; set; } = TaxClassification.General;
