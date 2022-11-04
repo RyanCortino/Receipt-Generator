@@ -2,6 +2,9 @@
 
 namespace ReceiptGenerator.Domain.ValueObjects;
 
+/// <summary>
+/// Represents a system of money in general use in a particular country.
+/// </summary>
 public class Currency : ValueObject
 {
     #region Constructors

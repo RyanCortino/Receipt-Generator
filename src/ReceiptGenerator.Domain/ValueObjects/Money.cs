@@ -1,7 +1,7 @@
 ﻿namespace ReceiptGenerator.Domain.ValueObjects;
 
 /// <summary>
-/// This value object refers to a quantity that represents a means of payment in an accepted currency.
+/// Refers to a quantity that represents a means of payment in an accepted currency.
 /// </summary>
 public class Money : ValueObject
 {

@@ -1,5 +1,8 @@
 ﻿namespace ReceiptGenerator.Domain.ValueObjects;
 
+/// <summary>
+/// Represents a deduction from the usual cost of something as a percentage.
+/// </summary>
 public sealed class Discount : ValueObject
 {
     #region Constructors
