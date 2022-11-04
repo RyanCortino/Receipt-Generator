@@ -1,4 +1,4 @@
-﻿namespace ReceiptGenerator.Domain.Common.Interfaces;
+﻿namespace ReceiptGenerator.Infrastructure.Services;
 
 public interface IEntryService
 {
