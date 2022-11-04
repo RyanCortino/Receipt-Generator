@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using ReceiptGenerator.Domain.Common.Interfaces;
-using ReceiptGenerator.Domain.ValueObjects;
-using System.Text;
+using ReceiptGenerator.Infrastructure.Services;
 
 namespace ReceiptGenerator.ConsoleUi.Services;
 

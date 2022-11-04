@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReceiptGenerator.ConsoleUi.Services;
 using ReceiptGenerator.Domain.Common.Interfaces;
+using ReceiptGenerator.Infrastructure.Services;
 using Serilog;
 
 // Setting up the configuartion for serilog 
