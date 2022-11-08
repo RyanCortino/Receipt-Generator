@@ -4,10 +4,10 @@ namespace RecipetGenerator.Infrastructure.Data
 {
     public interface IRepository<T> where T : class
     {
-        Task Delete(int id);
-        Task<T?> Get(int id);
-        Task<IEnumerable<T>> GetAll();
-        Task Insert(T product);
-        Task Update(T product);
+        Task DeleteAsync(int id);
+        Task<T?> GetAsync(int id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task InsertAsync(T product);
+        Task UpdateAsync(T product);
     }
 }

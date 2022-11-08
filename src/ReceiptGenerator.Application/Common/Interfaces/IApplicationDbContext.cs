@@ -1,14 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ReceiptGenerator.Domain.Entities;
+﻿using ReceiptGenerator.Domain.Entities;
+using RecipetGenerator.Infrastructure.Data;
 
 namespace ReceiptGenerator.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
-    DbSet<Cart> Carts { get; }
+    IRepository<Cart> Carts { get; }
 
-    DbSet<Product> Products { get; }
-
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-
+    IRepository<Product> Products { get; }
 }
