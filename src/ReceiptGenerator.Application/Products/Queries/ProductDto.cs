@@ -2,7 +2,7 @@
 
 namespace ReceiptGenerator.Application.Products.Queries;
 
-public class ProductDto // : IMapFrom<Product>
+public class ProductModel // : IMapFrom<Product>
 {
     public int Id { get; set; }
 
